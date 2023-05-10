@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="32.04" TargetName="_002_IGNITION_DATA_OVERALL_MACHINE" TargetType="Routine" TargetSubType="RLL" ContainsContext="true" Owner="maintenance" ExportDate="Thu May 04 14:56:05 2023" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="MES_CORE">
+<DataTypes Use="Context">
+</DataTypes>
+<Tags Use="Context">
+<Tag Name="FAULT" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FROM LINE
+ACTIVE]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="LNXX_SCHEDULE_RUNNING_ONS" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="LNXX_SCHEDULED_RUN" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="LNXX_TO_DC01_DOWNTIME_CODE" TagType="Produced" DataType="DINT" Dimensions="10" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<ProduceInfo ProduceCount="1" ProgrammaticallySendEventTrigger="false" UnicastPermitted="true" MinimumRPI="0.200" MaximumRPI="536870.900" DefaultRPI="0"/>
+<Description>
+<![CDATA[DOWNTIME PRODUCE TAG]]>
+</Description>
+<Comments>
+<Comment Operand="[1]">
+<![CDATA[WORK CENTER MAIN LINE A]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[WORK CENTER MAIN LINE B]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[WORK CENTER MAIN LINE C]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[WORK CENTER MAIN LINE D]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[WORK CENTER MAIN LINE E]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[WORK CENTER SUB LINE C]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[WORK CENTER SUB LINE E]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1036,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="DINT" Dimensions="10" Radix="Decimal">
+<Element Index="[0]" Value="1036"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="RUNNING" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FROM LINE]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Context" Name="MES_CORE">
+<Routines Use="Context">
+<Routine Use="Target" Name="_002_IGNITION_DATA_OVERALL_MACHINE" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[
+
+ONLY NEED TO REPLACE ANY TAGS THAT HAVE THE COMMENT FROM LINE WITH THE DATA YOU GET FROM THE LINE.]]>
+</Comment>
+<Text>
+<![CDATA[XIO(LNXX_SCHEDULED_RUN)MOV(0,LNXX_TO_DC01_DOWNTIME_CODE[0]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[[XIC(RUNNING) XIC(LNXX_SCHEDULED_RUN) ,XIC(LNXX_SCHEDULED_RUN) ONS(LNXX_SCHEDULE_RUNNING_ONS[1]) ]CLR(LNXX_TO_DC01_DOWNTIME_CODE[0]);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Text>
+<![CDATA[XIC(FAULT)XIO(RUNNING)XIC(LNXX_SCHEDULED_RUN)EQU(LNXX_TO_DC01_DOWNTIME_CODE[0],0)MOV(1036,LNXX_TO_DC01_DOWNTIME_CODE[0]);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>
