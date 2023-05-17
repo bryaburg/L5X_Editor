@@ -15,4 +15,5 @@ print(Rung0.tag, Rung0.attrib, Rung0.text)
 for Rung in RSLogix5000Content.findall(".//Rung[@Number= '0']/Text"):
     Rung.text = "XIC(LNXX_SCHEDULED_RUN)MOV(0,LNXX_TO_DC01_DOWNTIME_CODE[0]);"
     print(Rung.tag, Rung.attrib, Rung.text)
-    ET.SubElement(Rung, "")
+
+"""tree.write(xmlfile[:-4]+ "edit_XML")"""
